@@ -1,0 +1,52 @@
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.nav img {
+  width: auto;
+  height: 60px;
+}
+
+.menuIcon {
+  display: none;
+  cursor: pointer;
+}
+
+.dropdownMenu {
+  display: flex;
+}
+
+.nav a:hover {
+  color: var(--text-secondary);
+}
+
+@media (max-width: 768px) {
+  .nav img {
+    height: 45px;
+  }
+
+  .dropdownMenu {
+    display: none;
+  }
+
+  .menuIcon {
+    display: block;
+  }
+
+  .menuIconContainer {
+    position: relative;
+  }
+
+  .displayMobileMenu {
+    display: block;
+    width: 100%;
+
+    position: fixed;
+    top: 77px;
+    left: 0;
+
+    background-color: var(--bg-dark);
+  }
+}
