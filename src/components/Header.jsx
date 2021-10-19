@@ -36,7 +36,7 @@ function Header() {
             <ul className={dropdownMenuClasses}>
               <li className={isDisplayed ? "container" : null}>
                 <Link
-                  to="/category/tech"
+                  to="/category/technology"
                   className="p-3 text-uppercase text-light"
                 >
                   Tech
