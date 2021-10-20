@@ -1,12 +1,13 @@
-.nav {
+.header {
   position: sticky;
   top: 0;
   z-index: 1;
+  display: block;
 }
 
 .nav img {
   width: auto;
-  height: 60px;
+  height: 45px;
 }
 
 .menuIcon {
@@ -23,10 +24,6 @@
 }
 
 @media (max-width: 768px) {
-  .nav img {
-    height: 45px;
-  }
-
   .nav a {
     display: block;
   }
