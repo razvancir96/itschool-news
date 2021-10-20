@@ -25,3 +25,8 @@
 .newsDetails figcaption {
   font-size: 0.875rem;
 }
+
+.newsDetails iframe[src*="youtube"] {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
