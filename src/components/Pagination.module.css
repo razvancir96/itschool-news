@@ -1,0 +1,12 @@
+.pagination a {
+  color: var(--text-primary);
+}
+
+.pagination a:hover {
+  color: var(--text-primary);
+}
+
+span#paginationActive {
+  background-color: var(--bg-primary);
+  border-color: var(--bg-primary);
+}
