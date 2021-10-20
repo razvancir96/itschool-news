@@ -18,7 +18,7 @@ function App() {
         <Route path="/category/:categoryId">
           <NewsCategory />
         </Route>
-        <Route path="/news/:newsId">
+        <Route path="/news/:newsId*">
           <NewsDetails />
         </Route>
         <Route path="*">
