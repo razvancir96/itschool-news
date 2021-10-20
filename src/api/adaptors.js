@@ -29,6 +29,7 @@ export function getNewsDetails(apiResponse) {
     image: rawNewsDetails.fields.main,
     content: rawNewsDetails.fields.body,
     author: rawNewsDetails.fields.byline,
+    thumbnail: rawNewsDetails.fields.thumbnail,
   };
 
   return adaptedNewsDetails;

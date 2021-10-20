@@ -1,4 +1,4 @@
-import React from "react";
+import { useContext } from "react";
 import { useParams } from "react-router-dom";
 import Layout from "../components/Layout";
 import Container from "react-bootstrap/Container";
@@ -10,16 +10,24 @@ import { getNewsDetails } from "../api/adaptors";
 import Button from "react-bootstrap/Button";
 import styles from "./NewsDetails.module.css";
 import { getFormattedDate } from "../utils/date";
+import { addToFavorites } from "../store/Favorites/actions";
+import { FavoritesContext } from "../store/Favorites/context";
 
 function NewsDetails() {
+  const { favoritesDispatch } = useContext(FavoritesContext);
   const { newsId } = useParams();
   const newsDetailsEndpoint = getNewsDetailsEndpoint(newsId);
   const newsDetails = useFetch(newsDetailsEndpoint);
   const adaptedNewsDetails = getNewsDetails(newsDetails);
 
-  const { title, description, image, date, author, content } =
+  const { title, description, image, date, author, content, thumbnail } =
     adaptedNewsDetails;
   const formattedDate = getFormattedDate(date);
+
+  function handleAddToFavorites(product) {
+    const actionResult = addToFavorites(product);
+    favoritesDispatch(actionResult);
+  }
 
   return (
     <Layout>
@@ -37,7 +45,19 @@ function NewsDetails() {
                 <p>{author}</p>
                 <p className="mb-0">{formattedDate}</p>
               </div>
-              <Button>Adaugă la favorite</Button>
+              <Button
+                onClick={() => {
+                  handleAddToFavorites({
+                    id: newsId,
+                    thumbnail,
+                    title,
+                    description,
+                    hasCloseButton: true,
+                  });
+                }}
+              >
+                Adaugă la favorite
+              </Button>
             </div>
             <div dangerouslySetInnerHTML={{ __html: content }}></div>
           </Col>
