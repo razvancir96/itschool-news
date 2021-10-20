@@ -16,7 +16,9 @@ function NewsCard(props) {
   }
 
   return (
-    <Card className="h-100 d-flex flex-column justify-content-between align-items-center">
+    <Card
+      className={`${styles.newsCard} h-100 d-flex flex-column justify-content-between align-items-center`}
+    >
       <Link to={`/news/${newsId}`}>
         <Card.Img variant="top" src={imgSrc} />
         <Card.Body>
