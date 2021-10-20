@@ -1,0 +1,27 @@
+.newsDetails {
+  text-align: left;
+}
+
+.newsDetails img {
+  width: 100%;
+  height: auto;
+}
+
+.newsDetails a {
+  color: var(--text-secondary);
+}
+
+.newsDetails a:hover {
+  color: var(--text-secondary);
+  text-decoration: underline;
+}
+
+.newsDetails h2,
+.newsDetails h3 {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.newsDetails figcaption {
+  font-size: 0.875rem;
+}
