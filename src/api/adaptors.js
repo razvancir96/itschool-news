@@ -15,3 +15,21 @@ export function getNewsList(apiResponse) {
 
   return adaptedNewsList;
 }
+
+export function getNewsDetails(apiResponse) {
+  if (!apiResponse || !apiResponse.response) {
+    return {};
+  }
+
+  const rawNewsDetails = apiResponse.response.content;
+  const adaptedNewsDetails = {
+    date: rawNewsDetails.webPublicationDate,
+    title: rawNewsDetails.fields.headline,
+    description: rawNewsDetails.fields.trailText,
+    image: rawNewsDetails.fields.main,
+    content: rawNewsDetails.fields.body,
+    author: rawNewsDetails.fields.byline,
+  };
+
+  return adaptedNewsDetails;
+}
