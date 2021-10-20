@@ -12,7 +12,7 @@ export function favoritesReducer(state, action) {
         return state;
       } else {
         const newState = {
-          products: [...state.products, action.payload],
+          products: [action.payload, ...state.products],
         };
         return newState;
       }
