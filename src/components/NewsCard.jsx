@@ -7,11 +7,15 @@ import { removeFromFavorites } from "../store/Favorites/actions";
 import { FavoritesContext } from "../store/Favorites/context";
 
 function NewsCard(props) {
+  // Extragem dispatch-ul care modifica state-ul aferent stirilor favorite.
   const { favoritesDispatch } = useContext(FavoritesContext);
+  // Extragem prop-urile componentei.
   const { newsId, imgSrc, title, description, hasCloseButton } = props;
 
   function handleRemoveFromFavorites(id) {
+    // Apelam actiunea de stergere de la favorite.
     const actionResult = removeFromFavorites(id);
+    // Trimitem rezultatul actiunii catre reducer.
     favoritesDispatch(actionResult);
   }
 
@@ -19,6 +23,7 @@ function NewsCard(props) {
     <Card
       className={`${styles.newsCard} h-100 d-flex flex-column justify-content-between align-items-center`}
     >
+      {/* La click pe continutul card-ului, suntem redirectati catre pagina cu detalii. */}
       <Link to={`/news/${newsId}`}>
         <Card.Img variant="top" src={imgSrc} />
         <Card.Body>
@@ -26,11 +31,13 @@ function NewsCard(props) {
           <Card.Text>{description}</Card.Text>
         </Card.Body>
       </Link>
+      {/* Daca avem buton de eliminare de la favorite, il afisam. */}
       {hasCloseButton && (
         <Button
           variant="light"
           className={styles.newsCardButton}
           onClick={() => {
+            // Pasam id-ul corespunzator functiei care actualizeaza lista de favorite.
             handleRemoveFromFavorites(newsId);
           }}
         >

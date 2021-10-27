@@ -1,3 +1,4 @@
+// Functia primeste formatul de data de la The Guardian si generaza formatul dorit de noi.
 export function getFormattedDate(dateString) {
   const currentDate = new Date(dateString);
   let month = currentDate.getMonth();

@@ -1,9 +1,11 @@
+/* Ne asiguram ca pagina ocupa minim toata inaltimea ecranului. */
 .layout {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
+/* Continutul principal creste cat are loc, astfel incat footerul sa fie in subsol. */
 .layout main {
   flex: 1;
   text-align: center;

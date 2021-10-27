@@ -1,3 +1,4 @@
+/* Suprascriem stilizarea default a paginarii lui Bootstrap. */
 .pagination a {
   color: var(--text-primary);
 }

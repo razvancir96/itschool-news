@@ -8,11 +8,14 @@ function NewsCardList(props) {
   const { newsList } = props;
 
   return (
+    // Folosim grid-ul bootstrap pentru asezarea in pagina.
     <Container>
       <Row>
+        {/* Mapam prin lista de stiri, iar pentru fiecare stire, afisam un card. */}
         {newsList.map((news) => {
           return (
             <Col xs={12} md={6} lg={4} className="mb-4" key={news.id}>
+              {/* Atentie la denumirile cheilor din obiectul news si la denumirile prop-urilor lui NewsCard! */}
               <NewsCard
                 newsId={news.id}
                 imgSrc={news.thumbnail}
