@@ -22,7 +22,7 @@ export function favoritesReducer(state, action) {
       }
     }
     case "REMOVE_FROM_FAVORITES": {
-      // Filtram produsele din state, elimnandu-l pe ce care id-ul venit din payload.
+      // Filtram produsele din state, elimnandu-l pe cel care are id-ul venit din payload.
       const filteredProducts = state.products.filter((product) => {
         return product.id !== action.payload;
       });
