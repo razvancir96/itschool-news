@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams, useLocation } from "react-router-dom";
+import { useParams, useSearchParams } from "react-router-dom";
 import Layout from "../components/Layout";
 import Container from "react-bootstrap/Container";
 import { useFetch } from "../utils/hooks/useFetch";
@@ -11,8 +11,8 @@ import Pagination from "../components/Pagination";
 function NewsCategory() {
   // Extragem paramtrul venit din URL.
   const { categoryId } = useParams();
-  // Extragem query param-ul page din URL.
-  const queryParams = new URLSearchParams(useLocation().search);
+  // Extragem query (search) param-ul page din URL.
+  let [queryParams] = useSearchParams();
   let currentPage = queryParams.get("page");
   // Daca nu avem query param-ul page in url, inseamna ca suntem pe prima pagina.
   if (!currentPage) {

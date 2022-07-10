@@ -1,5 +1,5 @@
 // Importam componentele ce tin de rutare.
-import { Route, Switch } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 // Importam paginile.
 import Page404 from "./pages/Page404";
 import Home from "./pages/Home";
@@ -28,24 +28,14 @@ function App() {
       {/* Pasam state-ul global si dispatch-ul catre intreaga aplicatie. */}
       <FavoritesContext.Provider value={favoritesContextValue}>
         {/* Rutarea clasica, similara cu ce am facut la sedinta 32. */}
-        <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route path="/favorites">
-            <Favorites />
-          </Route>
-          <Route path="/category/:categoryId">
-            <NewsCategory />
-          </Route>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/favorites" element={<Favorites />} />
+          <Route path="/category/:categoryId" element={<NewsCategory />} />
           {/* Atentie! Id-ul unei stiri de la the guardian contine /-uri, deci avem nevoie de * pentru ca parametru newsId sa includa toate /-urile. */}
-          <Route path="/news/:newsId*">
-            <NewsDetails />
-          </Route>
-          <Route path="*">
-            <Page404 />
-          </Route>
-        </Switch>
+          <Route path="/news/:newsId" element={<NewsDetails />} />
+          <Route path="*" element={<Page404 />} />
+        </Routes>
       </FavoritesContext.Provider>
     </div>
   );

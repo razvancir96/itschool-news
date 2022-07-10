@@ -21,7 +21,7 @@ function Header() {
         <Container className="d-flex justify-content-between align-items-center">
           <Link to="/" className="p-3">
             <img
-              src="https://www.itschool.ro/img/logo-white.png"
+              src="https://itschool.ro/images/logo-itschool-dark.svg"
               alt="itschool logo"
             />
           </Link>

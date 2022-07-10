@@ -17,7 +17,9 @@ function NewsDetails() {
   // Extragem functia care modifica state-ul global.
   const { favoritesDispatch } = useContext(FavoritesContext);
   // Extragem parametrul venit din URL.
-  const { newsId } = useParams();
+  let { newsId } = useParams();
+  // Vrem ca id-ul extras din URL sa contina /-urile, asa ca il decodam.
+  newsId = decodeURIComponent(newsId);
   // Generam endpointul pentru detaliile stirii.
   const newsDetailsEndpoint = getNewsDetailsEndpoint(newsId);
   // Cerem datele de la server.

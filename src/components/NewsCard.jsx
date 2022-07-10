@@ -24,7 +24,8 @@ function NewsCard(props) {
       className={`${styles.newsCard} h-100 d-flex flex-column justify-content-between align-items-center`}
     >
       {/* La click pe continutul card-ului, suntem redirectati catre pagina cu detalii. */}
-      <Link to={`/news/${newsId}`}>
+      {/* Caracterul / din id il deruteaza pe React Router, asa ca in codificam. */}
+      <Link to={`/news/${encodeURIComponent(newsId)}`}>
         <Card.Img variant="top" src={imgSrc} />
         <Card.Body>
           <Card.Title>{title}</Card.Title>

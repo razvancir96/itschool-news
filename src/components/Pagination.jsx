@@ -1,13 +1,13 @@
 import React from "react";
 import BootstrapPagination from "react-bootstrap/Pagination";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import styles from "./Pagination.module.css";
 
 function Pagination(props) {
   // Componenta va primi ca prop-uri numarul paginii care este activa, precum si url-ul catre care redirecteaza la click pe o noua pagina.
   let { active, baseUrl } = props;
-  // Folosim hook-ul useHistory.
-  let history = useHistory();
+  // Folosim hook-ul useNavigate.
+  let navigate = useNavigate();
   // Daca nu am primit nicio valoare pentru prop-ul active, inseamna ca pagina 1 este activa.
   if (!active) {
     active = 1;
@@ -24,8 +24,8 @@ function Pagination(props) {
         // Daca pagina este activa, ii adaugam un id pentru stilizare (suprascrierea stilizarii de la Bootstrap).
         id={active ? styles.paginationActive : null}
         onClick={() => {
-          // La click pe buton, trimitem catre noua pagina.
-          history.push(`${baseUrl}?page=${number}`);
+          // La click pe buton, navigam catre noua pagina.
+          navigate(`${baseUrl}?page=${number}`);
           // Si scrollam inapoi in varful paginii.
           window.scrollTo({
             top: 0,
