@@ -1,5 +1,5 @@
-// Importam componentele ce tin de rutare.
-import { Route, Routes } from "react-router-dom";
+// Importam componentele ce tin de rutare.;
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 // Importam paginile.
 import Page404 from "./pages/Page404";
 import Home from "./pages/Home";
@@ -10,6 +10,27 @@ import NewsDetails from "./pages/NewsDetails";
 import { useReducer } from "react";
 import { FavoritesContext } from "./store/Favorites/context";
 import { initialState, favoritesReducer } from "./store/Favorites/reducer";
+
+// Definim rutele, similar cu ce am facut la sedinta 32.
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Home />,
+    errorElement: <Page404 />,
+  },
+  {
+    path: "/favorites",
+    element: <Favorites />,
+  },
+  {
+    path: "/category/:categoryId",
+    element: <NewsCategory />,
+  },
+  {
+    path: "/news/:newsId",
+    element: <NewsDetails />,
+  },
+]);
 
 function App() {
   // Initializam reducerul pentru produse favorite.
@@ -27,15 +48,8 @@ function App() {
     <div className="App">
       {/* Pasam state-ul global si dispatch-ul catre intreaga aplicatie. */}
       <FavoritesContext.Provider value={favoritesContextValue}>
-        {/* Rutarea clasica, similara cu ce am facut la sedinta 32. */}
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/favorites" element={<Favorites />} />
-          <Route path="/category/:categoryId" element={<NewsCategory />} />
-          {/* Atentie! Id-ul unei stiri de la the guardian contine /-uri, deci avem nevoie de * pentru ca parametru newsId sa includa toate /-urile. */}
-          <Route path="/news/:newsId" element={<NewsDetails />} />
-          <Route path="*" element={<Page404 />} />
-        </Routes>
+        {/* Adaugam providerul de rutare, similara cu ce am facut la sedinta 32. */}
+        <RouterProvider router={router} />
       </FavoritesContext.Provider>
     </div>
   );
