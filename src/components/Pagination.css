@@ -1,13 +1,13 @@
 /* Suprascriem stilizarea default a paginarii lui Bootstrap. */
-.pagination a {
+.Pagination a {
   color: var(--text-primary);
 }
 
-.pagination a:hover {
+.Pagination a:hover {
   color: var(--text-primary);
 }
 
-span#paginationActive {
+.Pagination span#pagination-active {
   background-color: var(--bg-primary);
   border-color: var(--bg-primary);
 }

@@ -1,46 +1,46 @@
-.header {
+.Header .nav {
   position: sticky;
   top: 0;
   z-index: 1;
   display: block;
 }
 
-.nav img {
+.Header .nav img {
   width: auto;
   height: 45px;
 }
 
-.menuIcon {
+.Header .menu-icon {
   display: none;
   cursor: pointer;
 }
 
-.dropdownMenu {
+.Header .custom-dropdown-menu {
   display: flex;
 }
 
-.nav a:hover {
+.Header .nav a:hover {
   color: var(--text-secondary);
 }
 
 @media (max-width: 768px) {
-  .nav a {
+  .Header .nav a {
     display: block;
   }
 
-  .dropdownMenu {
+  .Header .custom-dropdown-menu {
     display: none;
   }
 
-  .menuIcon {
+  .Header .menu-icon {
     display: block;
   }
 
-  .menuIconContainer {
+  .Header .menu-icon-container {
     position: relative;
   }
 
-  .displayMobileMenu {
+  .Header .display-mobile-menu {
     display: block;
     width: 100%;
 

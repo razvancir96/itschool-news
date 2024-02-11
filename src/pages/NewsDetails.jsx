@@ -8,7 +8,7 @@ import { useFetch } from "../utils/hooks/useFetch";
 import { getNewsDetailsEndpoint } from "../api/endpoints";
 import { getNewsDetails } from "../api/adaptors";
 import Button from "react-bootstrap/Button";
-import styles from "./NewsDetails.module.css";
+import "./NewsDetails.css";
 import { getFormattedDate } from "../utils/date";
 import { addToFavorites } from "../store/Favorites/actions";
 import { FavoritesContext } from "../store/Favorites/context";
@@ -42,7 +42,7 @@ function NewsDetails() {
 
   return (
     <Layout>
-      <Container className={`${styles.newsDetails} my-5`}>
+      <Container className="NewsDetails my-5">
         <Row className="d-flex justify-content-center">
           <Col xs={12} lg={8}>
             <h1 className="pt-3 mb-5">{title}</h1>

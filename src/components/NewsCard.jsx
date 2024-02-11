@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
-import styles from "./NewsCard.module.css";
+import "./NewsCard.css";
 import { removeFromFavorites } from "../store/Favorites/actions";
 import { FavoritesContext } from "../store/Favorites/context";
 
@@ -20,9 +20,7 @@ function NewsCard(props) {
   }
 
   return (
-    <Card
-      className={`${styles.newsCard} h-100 d-flex flex-column justify-content-between align-items-center`}
-    >
+    <Card className="NewsCard h-100 d-flex flex-column justify-content-between align-items-center">
       {/* La click pe continutul card-ului, suntem redirectati catre pagina cu detalii. */}
       {/* Caracterul / din id il deruteaza pe React Router, asa ca in codificam. */}
       <Link to={`/news/${encodeURIComponent(newsId)}`}>
@@ -36,7 +34,6 @@ function NewsCard(props) {
       {hasCloseButton && (
         <Button
           variant="light"
-          className={styles.newsCardButton}
           onClick={() => {
             // Pasam id-ul corespunzator functiei care actualizeaza lista de favorite.
             handleRemoveFromFavorites(newsId);

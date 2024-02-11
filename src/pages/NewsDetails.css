@@ -1,34 +1,34 @@
 /* Stilizam html-ul venit de la The Guardian. */
-.newsDetails {
+.NewsDetails {
   text-align: left;
 }
 
-.newsDetails img {
+.NewsDetails img {
   width: 100%;
   height: auto;
 }
 
-.newsDetails a {
+.NewsDetails a {
   color: var(--text-secondary);
 }
 
-.newsDetails a:hover {
+.NewsDetails a:hover {
   color: var(--text-secondary);
   text-decoration: underline;
 }
 
-.newsDetails h2,
-.newsDetails h3 {
+.NewsDetails h2,
+.NewsDetails h3 {
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
 
-.newsDetails figcaption {
+.NewsDetails figcaption {
   font-size: 0.875rem;
 }
 
 /* Selectam iframe-urile care au ca valoare a atributului src un sir ce contine subsirul "youtube". */
-.newsDetails iframe[src*="youtube"] {
+.NewsDetails iframe[src*="youtube"] {
   width: 100%;
   aspect-ratio: 16 / 9;
 }

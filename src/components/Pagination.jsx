@@ -1,7 +1,7 @@
 import React from "react";
 import BootstrapPagination from "react-bootstrap/Pagination";
 import { useNavigate } from "react-router-dom";
-import styles from "./Pagination.module.css";
+import "./Pagination.css";
 
 function Pagination(props) {
   // Componenta va primi ca prop-uri numarul paginii care este activa, precum si url-ul catre care redirecteaza la click pe o noua pagina.
@@ -22,7 +22,7 @@ function Pagination(props) {
         // Prop-ul active va avea valoarea true daca pagina curenta este cea activa.
         active={number === Number(active)}
         // Daca pagina este activa, ii adaugam un id pentru stilizare (suprascrierea stilizarii de la Bootstrap).
-        id={active ? styles.paginationActive : null}
+        id={active ? "pagination-active" : null}
         onClick={() => {
           // La click pe buton, navigam catre noua pagina.
           navigate(`${baseUrl}?page=${number}`);
@@ -41,9 +41,7 @@ function Pagination(props) {
   return (
     <div className="d-flex justify-content-center">
       {/* Pe ecran afisam itemii paginatiei, impachetati de componenta BootstrapPagination. */}
-      <BootstrapPagination className={styles.pagination}>
-        {items}
-      </BootstrapPagination>
+      <BootstrapPagination className="Pagination">{items}</BootstrapPagination>
     </div>
   );
 }
