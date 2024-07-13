@@ -1,6 +1,6 @@
 // Nu uita sa iti pui propriul tau API KEY!
 // Nu este safe sa pui cheia aici, dar fara un server n-ai cum sa fii safe oricum. Nu iti face griji, API-ul este gratuit, oricum.
-const API_KEY = "cce4027e-faf6-4eb5-ba9b-491c9b8f3571";
+const API_KEY = "fcb9a5de-baca-4714-b762-d5ac53a89b3d";
 
 // Functie care returneaza endpoint-ul pentru o anumita categorie de stiri.
 // pageNumber si pageSize au valori default, astfel incat daca nu le specifici o valoare la apel, vor primi automat valorile default.
